@@ -29,14 +29,14 @@ class Bug(models.Model):
         ('done', "Done"),
     ]
 
-    #
+    # add default value as 'error'
     bug_type = models.CharField(
         max_length=25,
         choices=BUG_TYPES,
         default='error',
     )
 
-    # add default_choice as todo since it requires admin to open the issue 
+    # add default value as 'todo' since it requires admin to open the issue 
     status = models.CharField(
         max_length=15,
         choices=STATUS,
