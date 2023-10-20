@@ -44,8 +44,7 @@ class Bug(models.Model):
         )
 
     #__str__() method is added
-    # Django will change the display name from object name to return a string that is same
-    #as the display name of the model
-    #display an object in the Django admin site and as the value inserted into a template when it displays an object. 
+    # Django will change the display name from object name to return a string that is same as the value of the model
+    # in this case, description will show the content you write instead of object
     def __str__(self):
         return self.description
