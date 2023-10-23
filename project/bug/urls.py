@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-
+# to set the application namespace
 app_name = "bug"
 urlpatterns = [
     path('register/', views.register_bug, name='register_bug'),
