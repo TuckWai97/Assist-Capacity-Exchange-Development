@@ -6,7 +6,8 @@
     <ul>
         {% for bug in bugs %}
             <!--`% url 'view_bug' bug.id %` % is to create a template for a link to view the details of each bug, where `view_bug` is the name of URL pattern for `view_bug` view, where `view_bug` about the fields-->
-            <li><a href="{% url 'bug:view_bug' bug.id %}">{{ bug.description }}</a></li>
+            <!--using inline CSS property style="text-decoration: none to remove underline from HTML links to seem more cleaner"-->
+            <li><a href="{% url 'bug:view_bug' bug.id %}" style="text-decoration: none">{{ bug.description }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}
