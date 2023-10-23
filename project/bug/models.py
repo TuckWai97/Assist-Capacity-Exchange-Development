@@ -1,7 +1,7 @@
 from django.db import models
 # import date function from datetime module
 from datetime import date
-
+from django.utils import timezone
 # Create your models here.
 class Bug(models.Model):
     # description of the Bug
@@ -59,5 +59,8 @@ class Bug(models.Model):
     
     # Get date in format "YYYY-MM-DD" from `strftime` Python method
     # You can use this function to format the date in case you would like to
-    def formatted_date(self):
-        return self.report_date.strftime("%Y-%m-%d")
+    #def formatted_date(self):
+    #    return self.report_date.strftime("%Y-%m-%d")
+    #Optional code to check the report_date if it is within the last day
+    def was_reported_recently(self):
+        return self.report_date >= timezone.now() - timezone.timedelta(days=1)
