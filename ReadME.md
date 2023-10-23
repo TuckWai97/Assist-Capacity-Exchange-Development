@@ -14,7 +14,7 @@ https://www.python.org/downloads/
 
 3. Download Django
 4. **Optional**: Use Django crispy form with Bootstrap 5 
-    - `pip install crispy-bootstrap5`
+    - 
 
       Refer to github repo here to use it: 
 
@@ -41,6 +41,9 @@ https://github.com/django-crispy-forms/crispy-bootstrap5/tree/main
 
 5. Make sure to install requests library, because it is needed in the task.
     - `python3 -m pip install requests`
+
+6. Install cripy form with Django 5
+    - `pip install crispy-bootstrap5`
 
 ## Tasks
 ## Task 1: Create a Django project and commit it to GitHub
