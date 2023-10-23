@@ -14,11 +14,10 @@ https://www.python.org/downloads/
 
 3. Download Django
 4. **Optional**: Use Django crispy form with Bootstrap 5 
-    - 
-
+   
       Refer to github repo here to use it: 
 
-https://github.com/django-crispy-forms/crispy-bootstrap5/tree/main
+    https://github.com/django-crispy-forms/crispy-bootstrap5/tree/main
 ## Before doing the task:
 1. It is recommended for you to use virtual environment
     - `py -m venv env`
