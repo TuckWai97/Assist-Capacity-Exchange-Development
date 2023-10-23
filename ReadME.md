@@ -25,7 +25,7 @@ https://github.com/django-crispy-forms/crispy-bootstrap5/tree/main
 
       env is your virtual environment name, you can name it as you wish.
 
-2. Activate your virtual environment
+2. Activate your virtual environment in Windows
 
     -  `\env\Scripts\activate`
 
