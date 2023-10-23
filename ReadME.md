@@ -1,13 +1,48 @@
 # Assist Capacity Exchange Development
 
 
-Prequisites:
-1. Download Python from official https://www.python.org/downloads/ ,Python 3.8 or later for Django 4.2
-  - To check which Python version to use with Django https://docs.djangoproject.com/en/4.2/faq/install/#faq-python-version-support
-2. Download pip py -m pip install --upgrade pip
-2.  python -m pip install Django 
-3. **Optional**: Use Django crispy form with Bootstrap 5 
-  - pip install crispy-bootstrap5
+## Prerequisite:
+
+1. Download Python from official ( Python 3.8 or later for Django 4.2)
+https://www.python.org/downloads/
+
+    - To check which Python version to use with Django 
+
+      https://docs.djangoproject.com/en/4.2/faq/install/#faq-python-version-support
+2. Download pip 
+   - `python3 -m pip install --upgrade pip`
+
+3. Download Django
+4. **Optional**: Use Django crispy form with Bootstrap 5 
+    - `pip install crispy-bootstrap5`
+
+      Refer to github repo here to use it: 
+
+https://github.com/django-crispy-forms/crispy-bootstrap5/tree/main
+## Before doing the task:
+1. It is recommended for you to use virtual environment
+    - `py -m venv env`
+
+      env is your virtual environment name, you can name it as you wish.
+
+2. Activate your virtual environment
+
+    -  `\env\Scripts\activate`
+
+        'env' is your previous created virtual environment name.
+
+**Note**: You can refer to documentation here: https://docs.python.org/3/tutorial/venv.html
+
+3. Check django version ,also can check whether Django is installed.  
+    -  `python -m django --version`
+
+4. If not installed, install Django.
+    - `python -m pip install Django`
+
+5. Make sure to install requests library, because it is needed in the task.
+    - `python3 -m pip install requests`
+
+## Tasks
 ## Task 1: Create a Django project and commit it to GitHub
 ### Objective of the task: Create a Django project with an app called bug and commit it in GitHub.
 Steps:
