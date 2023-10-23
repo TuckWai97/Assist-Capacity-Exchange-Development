@@ -1,15 +1,17 @@
 from django.db import models
+# import date function from datetime module
 from datetime import date
 
 # Create your models here.
 class Bug(models.Model):
+    # description of the Bug
     description =models.TextField()
 
-    # create a sqeuence for bug type consists f iterables of exactly two items
+    # create a sequence(or list) for bug type consists f iterables of exactly two items
     # to use as choices for the field 'bug_type'.
     # (value, human_readable_name)
     # first element in each tuple is actual value to be set, for example 'error',
-    # the second element is the human_readable name.
+    # the second element is the human_readable name, which user will see on the website.
     BUG_TYPES = [
         ('error', "Error"),
         ('new_feature', "New Feature"),
@@ -19,17 +21,23 @@ class Bug(models.Model):
 
     ]
 
-    # date.today from datetime.date.today()
-    # get current date by using class method today()
-    report_date = models.DateField(default=date.today)
+    # `DateField` class return a date represented in Python, stores in `report_date`
+    # get the current date when the bug model is created with `date.today` if this field is not expclicitly provided.
+    # created a `formatted_date` method to format the date, this is optional
+    report_date = models.DateField('date reported',default=date.today)
 
+    # status with choices
     STATUS = [
         ('to_do', "To do"),
         ('in_progress', "In progress"),
         ('done', "Done"),
+        ('Won\'t Fix', 'Won\'t Fix'),
+        ('Duplicate', 'Duplicate'),
+        ('Invalid', 'Invalid'),
+
     ]
 
-    # add default value as 'error'
+    # add default value as 'error', if value is not explicitly specified when create Bug.
     bug_type = models.CharField(
         max_length=25,
         choices=BUG_TYPES,
@@ -44,7 +52,12 @@ class Bug(models.Model):
         )
 
     #__str__() method is added
-    # Django will change the display name from object name to return a string that is same as the value of the model
-    # in this case, description will show the content you write instead of object
+    #Return human- readable string representation of the Bug model. 
+    # if there is not this method, it will return object representation by default
     def __str__(self):
         return self.description
+    
+    # Get date in format "YYYY-MM-DD" from `strftime` Python method
+    # You can use this function to format the date in case you would like to
+    def formatted_date(self):
+        return self.report_date.strftime("%Y-%m-%d")
