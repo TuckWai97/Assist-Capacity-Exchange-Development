@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h2>Bug List</h2>
+    <ul>
+        {% for bug in bugs %}
+            <!--`{% url 'view_bug' bug.id %}` % is to create a template for a link to view the details of each bug, where `view_bug` is the name of URL pattern for `view_bug` view, where `view_bug` about the fields-->
+            <li><a href="{% url 'view_bug' bug.id %}">{{ bug.description }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
