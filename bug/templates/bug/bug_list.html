@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Bug List</h2>
+<!--Use this line to check the number of bugs displayed in bug list <p>Number of Bugs: {{ bug_list.count }}</p>-->
+    <ul>
+        {% for bug in bug_list %}
+            <!-- `url` is used to create a link to view the details of each bug -->
+            <li><a href="{% url 'bug:view_bug' bug.pk %}" style="text-decoration: none">{{ bug.description }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
