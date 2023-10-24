@@ -131,4 +131,3 @@ class BugViewsTest(TestCase):
 
         # Check if the bug's description is present in the response
         self.assertContains(response, 'To-Do Bug')
-
