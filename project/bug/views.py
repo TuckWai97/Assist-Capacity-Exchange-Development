@@ -5,10 +5,7 @@ from .models import Bug
 from .forms import BugRegistrationForm
 from django.utils import timezone
 from django.urls import reverse
-class IndexView(ListView):
-    template_name = 'bug/index.html'
-    context_object_name = 'latest_bugs'
-    
+
 # Define a view for creating a new Bug
 class BugCreateView(CreateView):
     model = Bug  # Operates on the Bug model
