@@ -23,9 +23,9 @@ https://www.python.org/downloads/
     ```bash
     git clone https://github.com/factism001/wikimedia.git
     ```
-2. change directory into `Assist-Capacity-Exchange-Development/project` directory
+2. change directory into `Assist-Capacity-Exchange-Development` directory
    ```bash
-   cd Assist-Capacity-Exchange-Development/project
+   cd Assist-Capacity-Exchange-Development
    ```
 3. Create a virtual environment to isolate project dependencies
    ```bash
