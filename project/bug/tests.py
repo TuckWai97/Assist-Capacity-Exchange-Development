@@ -27,7 +27,7 @@ class BugModelTest(TestCase):
             bug.status = status
             self.assertEqual(bug.status, status)
 
-    # Tests with ensure bug with earlier date will be accepted
+    # Tests with ensure bug with earlier/past date will be accepted
     def test_past_date_bug(self):
     # Create a Bug object with a past report_date
         past_date = timezone.now() - timezone.timedelta(days=1)
