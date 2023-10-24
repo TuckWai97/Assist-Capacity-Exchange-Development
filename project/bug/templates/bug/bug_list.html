@@ -1,13 +1,12 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
 
 {% block content %}
     <h2>Bug List</h2>
+<!--Use this line to check the number of bugs displayed in bug list <p>Number of Bugs: {{ bug_list.count }}</p>-->
     <ul>
-        {% for bug in bugs %}
-            <!--`% url 'view_bug' bug.id %` % is to create a template for a link to view the details of each bug, where `view_bug` is the name of URL pattern for `view_bug` view, where `view_bug` about the fields-->
-            <!--using inline CSS property style="text-decoration: none to remove underline from HTML links to seem more cleaner"-->
-            <li><a href="{% url 'bug:view_bug' bug.id %}" style="text-decoration: none">{{ bug.description }}</a></li>
+        {% for bug in bug_list %}
+            <!-- `url` is used to create a link to view the details of each bug -->
+            <li><a href="{% url 'bug:view_bug' bug.pk %}" style="text-decoration: none">{{ bug.description }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}
