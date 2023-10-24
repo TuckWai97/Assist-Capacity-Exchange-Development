@@ -23,7 +23,7 @@ https://www.python.org/downloads/
     ```bash
     git clone https://github.com/factism001/wikimedia.git
     ```
-2. change directory into `Assist-Capacity-Exchange-Development` directory
+2. change directory into `Assist-Capacity-Exchange-Development`
    ```bash
    cd Assist-Capacity-Exchange-Development
    ```
