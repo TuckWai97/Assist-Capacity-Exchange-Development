@@ -1,9 +1,9 @@
 from django.urls import path
 from . import views
-# to set the application namespace
+
 app_name = "bug"
 urlpatterns = [
-    path('register/', views.register_bug, name='register_bug'),
-    path('<int:bug_id>/', views.view_bug, name='view_bug'),
-    path('list/', views.list_bug, name='list_bug'),
+    path('register/', views.BugCreateView.as_view(), name='register_bug'),
+    path('<int:pk>/', views.BugDetailView.as_view(), name='view_bug'),
+    path('list/', views.BugListView.as_view(), name='list_bug'),
 ]
