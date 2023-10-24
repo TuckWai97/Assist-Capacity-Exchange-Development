@@ -33,5 +33,3 @@ class BugListView(ListView):
     model = Bug  # Operates on the Bug model
     template_name = 'bug/bug_list.html'  # Render this list template
     context_object_name = 'bug_list'
-    def get_queryset(self):
-        return Bug.objects.order_by("-report_date")
