@@ -23,9 +23,9 @@ https://www.python.org/downloads/
     ```bash
     git clone https://github.com/factism001/wikimedia.git
     ```
-2. change directory into `project` directory
+2. change directory into `Assist-Capacity-Exchange-Development/project` directory
    ```bash
-   cd project
+   cd Assist-Capacity-Exchange-Development/project
    ```
 3. Create a virtual environment to isolate project dependencies
    ```bash
@@ -53,12 +53,12 @@ https://www.python.org/downloads/
    ```
 
 6. (To be safe, run it) to create migrations for those changes
-   ```bash
+   ```
    python manage.py makemigrations
    ```
 
 7. (To be safe, run it) To create the tables in the database before we can use them
-   ```bash
+   ```
    python manage.py migrate
    ```
 
@@ -66,13 +66,13 @@ https://www.python.org/downloads/
 
 ### Django Admin
 1. Create a user who can login into admin site using the command:
-    ``` bash
+    ``` 
     python manage.py createsuperuser
     ```
 2. Enter desired username, email address, and password. You will be asked to enter your password twice, the second time as a confirmation of the first.
 
 3. Start development server if it is not running.
-    ```bash
+    ```
     python manage.py runserver
     ```
 4. Open a web browser, go to http://127.0.0.1:8000/admin/ to access it.
@@ -89,7 +89,7 @@ https://www.python.org/downloads/
 ### Django website:
 #### How to access the website:
 1. Start the development server.
-   ```bash
+   ```
    python manage.py runserver
     ```
 2. Open web browser, go to http://127.0.0.1:8000/ for home page.
@@ -119,7 +119,7 @@ https://www.python.org/downloads/
 
 ### Automated unit test cases
 - Run automated unit test with command 
-  ```bash
+  ```
   python manage.py test bug
   ```
 
