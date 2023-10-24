@@ -1,10 +1,15 @@
 from django.db.models.query import QuerySet
-from django.shortcuts import get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic import CreateView, DetailView, ListView
 from .models import Bug
 from .forms import BugRegistrationForm
 from django.utils import timezone
 from django.urls import reverse
+
+# Home page for Capacity Exchange project
+def home(request):
+    return render(request, 'bug/home.html')
+
 
 # Define a view for creating a new Bug
 class BugCreateView(CreateView):
