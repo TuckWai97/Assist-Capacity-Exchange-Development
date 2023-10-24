@@ -3,6 +3,7 @@ from django.db import models
 from datetime import date
 from django.utils import timezone
 from django.urls import reverse
+
 # Create your models here.
 class Bug(models.Model):
     # description of the Bug
@@ -26,7 +27,7 @@ class Bug(models.Model):
     # get the current date when the bug model is created with `date.today` if this field is not expclicitly provided.
     # created a `formatted_date` method to format the date, this is optional
     report_date = models.DateField('date reported',default=date.today)
-
+    
     # status with choices
     STATUS = [
         ('to_do', "To do"),
