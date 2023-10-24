@@ -35,7 +35,7 @@ https://www.python.org/downloads/
 
 4. Activate your virtual environment
    - For Windows
-      - If use cammand.exe
+      - If use command.exe
            ```bash    
            \env\Scripts\activate.bat
            ```
