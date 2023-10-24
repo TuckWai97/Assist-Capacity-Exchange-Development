@@ -51,18 +51,6 @@ https://www.python.org/downloads/
    ```bash
    pip install -r requirements.txt
    ```
-### How does the project works?
-1. Start the development server.
-   ```bash
-   python manage.py runserver
-    ```
-2. Open web browser, go to 127.0.0.1:8000/ for home page.
-
-3. Go to http://127.0.0.1:8000/register/ for registering a bug with description, bug_type, report_date and status.
-
-4. Go to http://127.0.0.1:8000/<bug_id> for checking the bug details.
-
-5. Go to http://127.0.0.1:8000/list/ to view the bug list with link for each bug.
 
 ## Features:
 
@@ -89,6 +77,18 @@ https://www.python.org/downloads/
    > info at https://docs.djangoproject.com/en/4.2/intro/tutorial02/ near end of page
 
 ### Django website:
+#### How to access the website:
+1. Start the development server.
+   ```bash
+   python manage.py runserver
+    ```
+2. Open web browser, go to http://127.0.0.1:8000/ for home page.
+
+3. Go to http://127.0.0.1:8000/register/ for registering a bug with description, bug_type, report_date and status.
+
+4. Go to http://127.0.0.1:8000/<bug_id> for checking the bug details.
+
+5. Go to [http://127.0.0.1:8000/list/](http://127.0.0.1:8000/list/) to view the bug list with link for each bug.
 
 #### Navigation of the Django website:
 - Home page: Landing page with 2 buttons, `Register Bug` and `Bug List`, style with Bootstrap 5.
