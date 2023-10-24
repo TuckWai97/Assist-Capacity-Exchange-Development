@@ -52,6 +52,16 @@ https://www.python.org/downloads/
    pip install -r requirements.txt
    ```
 
+6. (To be safe, run it) to create migrations for those changes
+   ```bash
+   python manage.py makemigrations
+   ```
+
+7. (To be safe, run it) To create the tables in the database before we can use them
+   ```bash
+   python manage.py migrate
+   ```
+
 ## Features:
 
 ### Django Admin
