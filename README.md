@@ -101,7 +101,7 @@ https://www.python.org/downloads/
 5. Go to [http://127.0.0.1:8000/list/](http://127.0.0.1:8000/list/) to view the bug list with link for each bug.
 
 #### Navigation of the Django website:
-- Home page: Landing page with 2 buttons, `Register Bug` and `Bug List`, style with Bootstrap 5.
+- :sparkles:Home page:sparkles:(optional): Landing page with 2 buttons, `Register Bug` and `Bug List`, style with Bootstrap 5.
 - Bug register page: Bug field with `Description`, `Bug type`, `Date reported` and `Status` that style with Django crispy form and Bootstrap 5.
    - `description` has short hint that describes the input field, `Text description of bug` in the text field.
 
@@ -139,13 +139,14 @@ Steps:
 2. Create a Bug model with the following fields: "description", "bug_type", "report_date", "status", representing, respectivelly, the textual description of the bug, the type of the bug (e.g. error, new feature etc), the date in which the bug is being registered and the status of resolution of the bug (e.g. to do, in progress, done, etc).
 
 3. Structure the database as described in the tutorial and create at least one bug through Django Admin.
-Output:
 
-   - Register the bug at Django Admin.
-   ![bug_register_admin](assets/bug_register_admin.png)
+   - Output:
 
-    - View with list of bug descriptions' link.
-   ![bug_list_admin](assets/bug_list_admin.png)
+      - Register the bug at Django Admin.
+      ![bug_register_admin](assets/bug_register_admin.png)
+   
+      - View with list of bug descriptions' link.
+      ![bug_list_admin](assets/bug_list_admin.png)
 
 ## Task 3: Write views and templates.
 ### Objective of the task: Create views and templates to 1) register and view a bug and 2) list all bugs registered
@@ -156,11 +157,26 @@ Steps:
 2. Create one view to register a bug into the database.
    - Create a html template with a simple form to add the bug to database.
 
+   - Output:
+
+       - Register bug view
+       ![bug_view](assets/bug_view.png)
+
 3. Create another view to view the fields of the bug.
    - Create a html template with a simple list of the fields of the bug.
 
+   - Output:
+      
+      - Bug details view
+      ![bug_details](assets/bug_details.png)
+
 4. And finally, create a view to list all the bugs in the database.
    - Create a html template with a simple list with links to the detail page of each bug.
+
+   - Output:
+
+      - Bug list view
+      ![bug_list](assets/bug_list.png)
 
 ## Task 4: Develop automated unit tests
 ### Objective of the task: Create automated unit tests for the bug app
