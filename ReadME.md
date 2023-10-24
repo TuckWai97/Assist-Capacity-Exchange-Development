@@ -1,7 +1,7 @@
 # Assist Capacity Exchange Development
 
 
-## Prerequisite:
+## Prerequisites:
 
 1. Download Python from official ( Python 3.8 or later for Django 4.2)
 https://www.python.org/downloads/
@@ -37,11 +37,11 @@ https://www.python.org/downloads/
    - For Windows
       - If use cammand.exe
            ```bash    
-          - \env\Scripts\activate.bat
+           \env\Scripts\activate.bat
            ```
       - Powershell
            ``` bash
-          - \env\Scripts\Activate.ps1
+            \env\Scripts\Activate.ps1
            ```
     >    'env' is your previous created virtual environment name.
     > **Note**: You can refer to documentation here: https://docs.python.org/3/tutorial/venv.html
@@ -64,12 +64,7 @@ https://www.python.org/downloads/
 
 5. Go to http://127.0.0.1:8000/list/ to view the bug list with link for each bug.
 
-### Feature of the Django website:
-- Home page: Landing page with 2 buttons, `Register Bug` and `View Bug list`
-- Bug register page: Bug field with `description`, `bug_type`, `report_date` and `status`.
-- Bug detail page : Shows the bug details submitted.
-- Bug List page :Links to the submitted bugs.
-- Django admin page : Used by admin to create, remove and modify bug.
+## Features:
 
 ### Django Admin
 1. Create a user who can login into admin site using the command:
@@ -93,6 +88,30 @@ https://www.python.org/downloads/
     - :pencil2: ``Change`` bug details or Delete it
    > info at https://docs.djangoproject.com/en/4.2/intro/tutorial02/ near end of page
 
+### Django website:
+
+#### Navigation of the Django website:
+- Home page: Landing page with 2 buttons, `Register Bug` and `Bug List`, style with Bootstrap 5.
+- Bug register page: Bug field with `Description`, `Bug type`, `Date reported` and `Status` that style with Django crispy form and Bootstrap 5.
+   - `description` has short hint that describes the input field, `Text description of bug` in the text field.
+
+   - `Bug type`: dropdown box with choices, `Error`, `New Feature`, `Enhancement`, `Security Vulnerability`, `Others`.
+ 
+   - `Date reported`: auto detect the current date, with a data picker icon on the right, which you can select the date.
+
+   - `Status`: dropdown box with choices, `To do`, `In progress`, `Done`, `Won't Fix`, `Duplicate`, `Invalid`.
+
+- Bug detail page : Shows the bug details submitted with bug's description as title.
+
+- Bug List page :Links to the submitted bugs, when click on each link, will navigate to Bug detail page.
+
+- Django admin page : Used by admin to create, remove and modify bug.
+
+### Automated unit test cases
+- Run automated unit test with command 
+  ```bash
+  python manage.py test bug
+  ```
 
 ## Tasks
 ## Task 1: Create a Django project and commit it to GitHub
@@ -111,6 +130,12 @@ Steps:
 
 3. Structure the database as described in the tutorial and create at least one bug through Django Admin.
 Output:
+
+   - Register the bug at Django Admin.
+   ![bug_register_admin](assets/bug_register_admin.png)
+
+    - View with list of bug descriptions' link.
+   ![bug_list_admin](assets/bug_list_admin.png)
 
 ## Task 3: Write views and templates.
 ### Objective of the task: Create views and templates to 1) register and view a bug and 2) list all bugs registered
@@ -136,3 +161,6 @@ Steps:
 2. Create at least four automated tests of the bug model.
 
 3. Create at least three automated tests of the bug views
+Output:
+  - Unit test result from terminal, total 10 unit tests, 5 unit tests for bug model, 5 unit tests for bug view.
+   ![unit_test_result](assets/unit_test.png)
