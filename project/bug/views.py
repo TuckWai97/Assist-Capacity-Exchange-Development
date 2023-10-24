@@ -8,9 +8,7 @@ from django.urls import reverse
 class IndexView(ListView):
     template_name = 'bug/index.html'
     context_object_name = 'latest_bugs'
-
-    def get_queryset(self):
-        return Bug.objects.filter(report_date=timezone.now()).order_by("-report_date")
+    
 # Define a view for creating a new Bug
 class BugCreateView(CreateView):
     model = Bug  # Operates on the Bug model
@@ -38,3 +36,5 @@ class BugListView(ListView):
     model = Bug  # Operates on the Bug model
     template_name = 'bug/bug_list.html'  # Render this list template
     context_object_name = 'bug_list'
+    def get_queryset(self):
+        return Bug.objects.order_by("-report_date")
