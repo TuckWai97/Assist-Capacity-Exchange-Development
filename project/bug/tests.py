@@ -13,6 +13,7 @@ class BugModelTest(TestCase):
         
     # Tests with valid choices accepted for both bug_type and status
     def test_choices(self):
+
         # For bug types, validate that the choices in Bug.BUG_TYPES match
         # the actual choices used in the bug model.
         bug = Bug(description="Test Bug", bug_type="error")
@@ -29,6 +30,7 @@ class BugModelTest(TestCase):
 
     # Tests with ensure bug with earlier date will be accepted
     def test_past_date_bug(self):
+
     # Create a Bug object with a past report_date
         past_date = timezone.now() - timezone.timedelta(days=1)
         bug = self.create_bug("Past Bug", days_ago=1)
@@ -45,12 +47,16 @@ class BugModelTest(TestCase):
 
     # Test if the default value of a bug is 'To Do' for bug_status, 'error' as bug_type and today for report_date
     def test_bug_default_status(self):
+
         # Create a Bug object
         bug = Bug(description="Another Bug")
+
         # Check if the status is 'To do' by default
         self.assertEqual(bug.status, 'to_do')
+
         # Check if the bug_type is 'error' by default
         self.assertEqual(bug.bug_type, 'error')
+
         # Check if report_date is today
         self.assertEqual(bug.report_date, timezone.now().date())
 
@@ -66,6 +72,7 @@ class BugModelTest(TestCase):
 
 # Test case class for the 'Bug' views
 class BugViewsTest(TestCase):
+
     # Test if the 'list_bug' view returns a status code of 200 (OK) and uses the 'bug_list.html' template
     def test_list_bug_view(self):
         response = self.client.get(reverse('bug:list_bug'))
@@ -89,6 +96,7 @@ class BugViewsTest(TestCase):
     # It simulates the process of registering a bug and then trying to register the same bug again,
     # and ensure that the view responds with a status code of 400 (Bad Request) for the second attempt.
     def test_duplicate_bug_view(self):
+
         # Create a bug record
         bug = Bug.objects.create(
             description='Test Bug',
@@ -107,6 +115,7 @@ class BugViewsTest(TestCase):
 
     # Test create the To Do Bug, check access to the bug list view and displayed correctly
     def test_list_to_do_bugs(self):
+        
         # Create a "To-Do" bug
         to_do_bug = Bug.objects.create(
             description="To-Do Bug",
