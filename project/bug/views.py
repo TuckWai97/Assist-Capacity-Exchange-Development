@@ -1,39 +1,40 @@
-from django.http import HttpResponse
-from django.shortcuts import render, redirect, get_object_or_404
-# Import message module from Django
-from django.contrib import messages
+from django.db.models.query import QuerySet
+from django.shortcuts import get_object_or_404, redirect
+from django.views.generic import CreateView, DetailView, ListView
 from .models import Bug
 from .forms import BugRegistrationForm
+from django.utils import timezone
+from django.urls import reverse
+class IndexView(ListView):
+    template_name = 'bug/index.html'
+    context_object_name = 'latest_bugs'
 
-#def index(request):
-#    return HttpResponse("Hello, world. You're at the polls index.")
+    def get_queryset(self):
+        return Bug.objects.filter(report_date=timezone.now()).order_by("-report_date")
+# Define a view for creating a new Bug
+class BugCreateView(CreateView):
+    model = Bug  # Operates on the Bug model
+    form_class = BugRegistrationForm  # Use the BugRegistrationForm
+    template_name = 'bug/bug_register.html'  # Render this form template
 
-# function to register bug
-def register_bug(request):
-    if request.method == "POST":
-        # Handle form submission and save the bug registration info
-        form = BugRegistrationForm(request.POST)
-        if form.is_valid():
-            bug= form.save()
-            # You can add a success message
-            #messages.success(request,  'Bug is registered successfully!')
-            # redirect back to bug detail page after successful registering a bug             
-            return redirect('bug:view_bug', bug.id)
-    else:
-        # If it is not POST request, display the registration form
-        form = BugRegistrationForm()
+    def get_success_url(self):   
+        # Reverse is a Django utility for building URLs. It takes a URL pattern name
+        # and any arguments needed to create the URL.
+        # In this case, it generates the URL for the detail view of the 'Bug' model
+        # using the URL pattern name 'bug:view_bug'. We pass the bug's ID as an argument
+        # to ensure that the URL is unique for each bug.
+        success_url = reverse('bug:view_bug', kwargs={"pk": self.object.pk})
+        # Add this line for debugging
+        #print("Success URL:", success_url)  
+        return success_url
 
-    return render(request, 'bug/bug_register.html', {'form': form})
+# Define a view for displaying Bug details
+class BugDetailView(DetailView):
+    model = Bug  # Operates on the Bug model
+    template_name = 'bug/view_bug.html'  # Render this detail template
 
-# function with a list of fields of the bug
-def view_bug(request, bug_id):
-#bug = Bug.objects.get(id=bug_id)
-    # Retrieve specific bug using its ID or handle 404 error if it does not exist
-    #pk means as primary key as variable to store bug's ID
-    bug = get_object_or_404(Bug, pk=bug_id)
-    return render(request, 'bug/view_bug.html', {'bug':bug})
-
-def list_bug(request):
-    # Retrieve all bugs from the database
-    bugs = Bug.objects.all()
-    return render(request, 'bug/bug_list.html', {'bugs':bugs})
+# Define a view for listing all Bugs
+class BugListView(ListView):
+    model = Bug  # Operates on the Bug model
+    template_name = 'bug/bug_list.html'  # Render this list template
+    context_object_name = 'bug_list'
