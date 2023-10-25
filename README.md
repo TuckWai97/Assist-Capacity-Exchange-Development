@@ -21,7 +21,7 @@ https://www.python.org/downloads/
 ### Setup in your machine:
 1. Clone using git command at terminal *OR* download `zip` by clicking `<>code` button on my github repository and choose `Download ZIP` to your computer then open it using IDE
     ```bash
-    git clone https://github.com/factism001/wikimedia.git
+    git clone https://github.com/TuckWai97/Assist-Capacity-Exchange-Development.git
     ```
 2. change directory into `Assist-Capacity-Exchange-Development`
    ```bash
