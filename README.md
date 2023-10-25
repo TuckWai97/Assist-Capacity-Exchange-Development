@@ -102,6 +102,8 @@ https://www.python.org/downloads/
 
 #### Navigation of the Django website:
 - :sparkles:Home page:sparkles:(optional): Landing page with 2 buttons, `Register Bug` and `Bug List`, style with Bootstrap 5.
+   ![landing_page](assets/landing_page.png)
+
 - Bug register page: Bug field with `Description`, `Bug type`, `Date reported` and `Status` that style with Django crispy form and Bootstrap 5.
    - `description` has short hint that describes the input field, `Text description of bug` in the text field.
 
