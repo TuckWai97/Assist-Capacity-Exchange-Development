@@ -45,7 +45,7 @@ class BugModelTest(TestCase):
         bug = Bug.objects.create(description="Another Bug", bug_type="Features")
         self.assertEqual(str(bug), "Another Bug")
 
-    # Test if the default value of a bug is 'To Do' for bug_status, 'error' as bug_type and today for report_date
+    # Test if the default value of a bug is 'To Do' for status, 'error' as bug_type and today for report_date
     def test_bug_default_status(self):
 
         # Create a Bug object
@@ -104,7 +104,7 @@ class BugViewsTest(TestCase):
             status='to_do',
         )
 
-        # Issue a GET request to the bug detail view
+        # Issue a GET request to the 'view_bug' view
         response = self.client.get(reverse('bug:view_bug', args=[str(bug.id)]))
 
         # Check that the response status code is 200 (OK)
@@ -113,7 +113,7 @@ class BugViewsTest(TestCase):
         # Check that the bug's description is present in the response
         self.assertContains(response, 'Test Bug')
 
-    # Test create the To Do Bug, check access to the bug list view and displayed correctly
+    # Test create the To Do Bug, check access to the 'list_bug' view and displayed correctly
     def test_list_to_do_bugs(self):
         
         # Create a "To-Do" bug
@@ -123,7 +123,7 @@ class BugViewsTest(TestCase):
             status="to_do",
         )
 
-        # Issue a GET request to the list view
+        # Issue a GET request to the 'list_bug' view
         response = self.client.get(reverse('bug:list_bug'))
 
         # Check if the response status code is 200 (OK)
